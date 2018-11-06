@@ -1,12 +1,19 @@
 let s:BUFFER_NAME = '-VIM-MAC-DICTIONARY-'
 
 function! s:open()
-
-    split
-    execute "silent edit " . s:BUFFER_NAME
-    " vertical resize 80
+    if bufexists(s:BUFFER_NAME)
+        let dictwin = bufwinnr(s:BUFFER_NAME)
+        if dictwin == -1
+            execute "sbuffer " . bufnr(s:BUFFER_NAME)
+        else
+            execute dictwin . ' wincmd w'
+        endif
+    else
+        execute "new " . s:BUFFER_NAME
     setlocal ft=vimmacdictionary
-    let s:bufNumber = bufnr('%')
+    endif
+
+    normal! gg0dG
 endfunction
 
 let s:plugindir = expand('<sfile>:p:h:h')
@@ -31,15 +38,25 @@ function! s:printBuffer(result)
     silent call setline(1, a:result)
 
     if s:isUseFormat()
-        silent %s/\v\.\s(\S+)1\./.\r\1\r  1./g
-        silent %s/\v(\S+\s*)(1\.)/\1\r  \2/g
-        silent %s/\v(\d+\.)/\r  \1/g
-        silent %s/\v(\D\.)/\1\r/g
-        silent %s/\v\s?▸/\r    ▸/g
-        silent %g/^\s*$/d
+        silent! %s/\v\.\s(\S+)1\./.\r\1\r  1./g
+        silent! %s/\v(\S+\s*)(1\.)/\1\r  \2/g
+        silent! %s/\v(\d+\.)/\r  \1/g
+        silent! %s/\v(\D\.)/\1\r/g
+        silent! %s/\v\s?▸/\r    ▸/g
+        silent! %g/^\s*$/d
+        silent! %s/\%x00//g
     endif
 
     silent normal! gg
+
+    let lastLine = 1 + line('$')
+    echom lastLine
+    if lastLine <= 10
+        execute "resize " . lastLine
+    else
+        resize 10
+    endif
+
     return
 endfunction
 
