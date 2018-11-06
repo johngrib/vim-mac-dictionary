@@ -32,6 +32,13 @@ function! s:isUseFormat()
     return g:vim_mac_dictionary_use_format == 1
 endfunction
 
+function! s:isUseApp()
+    if !exists('g:vim_mac_dictionary_use_app')
+        return v:false
+    endif
+    return g:vim_mac_dictionary_use_app == 1
+endfunction
+
 function! s:printBuffer(result)
     silent call s:open()
     silent call s:setLocalSetting()
@@ -64,6 +71,10 @@ function! VimMacDictionary#find(word)
 
     let l:result = system(s:plugindir . "/dictionary.swift " . a:word)
 
+    if s:isUseApp()
+        silent! call system('open dict://"' . a:word . '"')
+        return
+    endif
     if s:isUseBuffer()
         call s:printBuffer(l:result)
         return
