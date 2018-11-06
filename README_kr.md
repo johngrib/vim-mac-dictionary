@@ -4,7 +4,7 @@
 
 Mac의 사전 앱을 Vim 안에서 사용할 수 있습니다.
 
-![demo](https://user-images.githubusercontent.com/1855714/48068751-02914480-e217-11e8-9264-5d1b55e0aba9.gif )
+![dictk](https://user-images.githubusercontent.com/1855714/48100158-79edc500-e265-11e8-89e1-0a234c445fb5.gif)
 
 # Installation
 
