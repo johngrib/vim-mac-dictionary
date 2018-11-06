@@ -4,7 +4,7 @@
 
 A Vim plugin that helps you find words using Mac's dictionary app.
 
-![demo](https://user-images.githubusercontent.com/1855714/48068751-02914480-e217-11e8-9264-5d1b55e0aba9.gif )
+![demo](https://user-images.githubusercontent.com/1855714/48071619-15f3de00-e21e-11e8-9f31-ce3ce981e433.gif )
 
 # Installation
 
