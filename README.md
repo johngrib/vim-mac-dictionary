@@ -35,7 +35,7 @@ Then run the following in Vim:
 3. Drag the mouse over the dictionary you want to use and put it on the **top line**.
     * Please be sure to set it because it will show only the search result of the dictionary in the top row.
 
-![setting](https://user-images.githubusercontent.com/1855714/48068975-89462180-e217-11e8-9f01-a7d58ba690d8.png )
+![setting](https://user-images.githubusercontent.com/1855714/48071044-a4676000-e21c-11e8-8609-a8c33b58e28c.png )
 
 ## How To Use
 
