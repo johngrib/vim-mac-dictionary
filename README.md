@@ -39,6 +39,8 @@ Then run the following in Vim:
 
 ![setting](https://user-images.githubusercontent.com/1855714/48071044-a4676000-e21c-11e8-8609-a8c33b58e28c.png )
 
+![setting](https://user-images.githubusercontent.com/1855714/48068975-89462180-e217-11e8-9f01-a7d58ba690d8.png )
+
 ## How To Use
 
 * Place the cursor on a word and type `: MacDictWord` to find the dictionary.
