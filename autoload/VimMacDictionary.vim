@@ -1,12 +1,19 @@
 let s:BUFFER_NAME = '-VIM-MAC-DICTIONARY-'
 
 function! s:open()
-
-    split
-    execute "silent edit " . s:BUFFER_NAME
-    " vertical resize 80
+    if bufexists(s:BUFFER_NAME)
+        let dictwin = bufwinnr(s:BUFFER_NAME)
+        if dictwin == -1
+            execute "sbuffer " . bufnr(s:BUFFER_NAME)
+        else
+            execute dictwin . ' wincmd w'
+        endif
+    else
+        execute "new " . s:BUFFER_NAME
     setlocal ft=vimmacdictionary
-    let s:bufNumber = bufnr('%')
+    endif
+
+    normal! gg0dG
 endfunction
 
 let s:plugindir = expand('<sfile>:p:h:h')
