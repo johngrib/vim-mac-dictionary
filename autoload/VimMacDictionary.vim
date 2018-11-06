@@ -38,15 +38,25 @@ function! s:printBuffer(result)
     silent call setline(1, a:result)
 
     if s:isUseFormat()
-        silent %s/\v\.\s(\S+)1\./.\r\1\r  1./g
-        silent %s/\v(\S+\s*)(1\.)/\1\r  \2/g
-        silent %s/\v(\d+\.)/\r  \1/g
-        silent %s/\v(\D\.)/\1\r/g
-        silent %s/\v\s?▸/\r    ▸/g
-        silent %g/^\s*$/d
+        silent! %s/\v\.\s(\S+)1\./.\r\1\r  1./g
+        silent! %s/\v(\S+\s*)(1\.)/\1\r  \2/g
+        silent! %s/\v(\d+\.)/\r  \1/g
+        silent! %s/\v(\D\.)/\1\r/g
+        silent! %s/\v\s?▸/\r    ▸/g
+        silent! %g/^\s*$/d
+        silent! %s/\%x00//g
     endif
 
     silent normal! gg
+
+    let lastLine = 1 + line('$')
+    echom lastLine
+    if lastLine <= 10
+        execute "resize " . lastLine
+    else
+        resize 10
+    endif
+
     return
 endfunction
 
