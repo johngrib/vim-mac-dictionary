@@ -43,8 +43,8 @@ Then run the following in Vim:
 
 ## How To Use
 
-* Place the cursor on a word and type `: MacDictWord` to find the dictionary.
-* type `: MacDictQuery` and then type the word you want to search for, it will find the dictionary.
+* Place the cursor on a word and type `:MacDictWord` to find the dictionary.
+* type `:MacDictQuery` and then type the word you want to search for, it will find the dictionary.
 
 You can register shortcuts in the following ways:
 
