@@ -50,7 +50,7 @@ You can register shortcuts in the following ways:
 
 ```viml
 nnoremap <C-p> :MacDictWord<CR>
-nnoremap <C-S-p> :MacDictWord<CR>
+nnoremap <C-S-p> :MacDictQuery<CR>
 ```
 
 ## Configuration

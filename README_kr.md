@@ -49,7 +49,7 @@ Plug 'johngrib/vim-mac-dictionary'
 
 ```viml
 nnoremap <C-p> :MacDictWord<CR> " ctrl+p 로 커서가 있는 곳의 단어를 사전에서 찾습니다
-nnoremap <C-S-p> :MacDictWord<CR> "ctrl+shift+p 로 검색하고 싶은 단어를 입력합니다
+nnoremap <C-S-p> :MacDictQuery<CR> "ctrl+shift+p 로 검색하고 싶은 단어를 입력합니다
 ```
 
 ## Configuration
